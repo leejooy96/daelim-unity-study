@@ -1,2 +1,5 @@
-# Daelim University College 2020 Unity Study
-대림대학교 유니티 스터디 실습자료
+# Daelim Unity Study 2020
+대림대학교 전공심화 유니티 스터디 실습자료
+
+- 교재: 유니티 교과서 (개정 3판)
+- 실습기간: 2020.03~2020.06
