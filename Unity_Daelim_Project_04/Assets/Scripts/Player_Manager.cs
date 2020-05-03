@@ -5,15 +5,12 @@ using UnityEngine;
 public class Player_Manager : MonoBehaviour
 {
     float jumpForce = 500.0f;
-
     float walkForce = 30.0f;
-
     float maxWalkSpeed = 2.0f;
 
     public GameObject camera_GO; // 카메라 오브젝트 선언
 
     bool left_Pointer = false; // 좌측 포인터 사용 변수
-
     bool right_Pointer = false; // 우측 포인터 사용 변수
 
     // Update is called once per frame

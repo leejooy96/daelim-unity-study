@@ -24,7 +24,7 @@ public class Scene_Manager : MonoBehaviour
             {
                 instance = GameObject.FindObjectOfType<Scene_Manager>();
 
-                if (!instance)
+                if (!instance) // 싱글톤 인스턴스가 없을 때 새로 만들기
                 {
                     GameObject gameObject = new GameObject();
                     gameObject.name = "Scene_Manager";
@@ -35,6 +35,7 @@ public class Scene_Manager : MonoBehaviour
         }
     }
 
+	// 씬 이름을 지정하여 해당 씬으로 이동
     public void Scene_Change(string scene_Name)
     {
         SceneManager.LoadScene(scene_Name); // 해당 스테이지 씬 로드

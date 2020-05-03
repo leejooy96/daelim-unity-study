@@ -65,7 +65,7 @@ public class Stage_A_Manager : MonoBehaviour
                     go_index = i; // 인덱스 값 전달하기
 
                     Arrow_Img_Instance_GO[go_index].transform.SetParent(Prefab_Parent_GO.transform); // 부모 캔버스 오브젝트로 이동
-                    Arrow_Img_Instance_GO[go_index].transform.localScale = new Vector3(1f, 1f, 1f);
+                    Arrow_Img_Instance_GO[go_index].transform.localScale = new Vector3(1f, -1f, 1f);
                     Arrow_Img_Instance_GO[go_index].SetActive(true); // 프리팹 인스턴스 활성화 (재활용)
                     float go_X = Random.Range(100f, Screen.width); // 위치 X 값 랜덤 생성. (스크린 가로 사이즈)
                     Arrow_Img_Instance_GO[go_index].transform.position = new Vector3(go_X, Screen.height, 0); // 스크린 세로 사이즈

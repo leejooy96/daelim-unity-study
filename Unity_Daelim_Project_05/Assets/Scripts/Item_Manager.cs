@@ -14,6 +14,7 @@ public class Item_Manager : MonoBehaviour
                     gameObject.GetComponentInParent<Cloud_Manager>().Start_item_regen();
 
                     Debug.Log("아이템 획득: " + other.name);
+					// 아이템 획득 이후 비활성화 처리
                     gameObject.SetActive(false);
                 }
                 break;

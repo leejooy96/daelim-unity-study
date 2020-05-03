@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player_Manager : MonoBehaviour
 {
     float jumpForce = 500.0f;
-
     float walkForce = 30.0f;
-
     float maxWalkSpeed = 2.0f;
 
     public GameObject camera_GO; // 카메라 오브젝트 선언
@@ -46,6 +44,9 @@ public class Player_Manager : MonoBehaviour
         {
             // 점프 애니메이션으로 전환
             transform.GetComponent<Animator>().SetTrigger("JumpTrigger");
+
+            // 점프 효과음 재생
+            transform.GetComponents<AudioSource>()[2].Play();
 
             if (transform.GetComponent<Rigidbody2D>().velocity.y == 0) // 속도가 0일 때만 점프 가능 처리
             {
@@ -94,7 +95,6 @@ public class Player_Manager : MonoBehaviour
         }
     }
 
-
     void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.name)
@@ -121,6 +121,10 @@ public class Player_Manager : MonoBehaviour
                 {
                     Debug.Log("가시 데미지!" + other.name);
 
+                    // 데미지 효과음 재생
+                    transform.GetComponents<AudioSource>()[0].Play();
+
+                    // 코루틴 처리
                     StartCoroutine(HP_Change(0.01f));
                     // HP_Gauge_Img_GO.GetComponent<Image>().fillAmount -= 0.1f; // HP 데미지 처리
                 }
@@ -128,6 +132,9 @@ public class Player_Manager : MonoBehaviour
             case "item":
                 {
                     Debug.Log("획득 내용" + other.name);
+
+                    // 아이템 획득 효과음 재생
+                    transform.GetComponents<AudioSource>()[1].Play();
 
                     // 코루틴 처리
                     StartCoroutine(HP_Change(-0.01f)); // HP 증가 코루틴 처리
