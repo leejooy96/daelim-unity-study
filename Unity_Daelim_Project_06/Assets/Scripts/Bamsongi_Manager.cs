@@ -16,6 +16,19 @@ public class Bamsongi_Manager : MonoBehaviour
         transform.GetComponent<Rigidbody>().isKinematic = true;
         transform.GetComponent<ParticleSystem>().Play(); // 파티클 시스템을 처리한다.
         transform.GetComponent<AudioSource>().Play(); // 효과음 처리
+        Debug.Log(collision.gameObject);
+        if (collision.gameObject == GameObject.Find("target"))
+        {
+            Game_Manager.score += 10;
+        }
+        else if (collision.gameObject == GameObject.Find("bamsongiPrefab(Clone)"))
+        {
+            Game_Manager.score += 5;
+        }
+        else
+        {
+            Game_Manager.score -= 10;
+        }
     }
 
     // Start is called before the first frame update
