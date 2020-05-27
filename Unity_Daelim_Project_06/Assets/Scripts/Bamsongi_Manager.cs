@@ -21,11 +21,7 @@ public class Bamsongi_Manager : MonoBehaviour
         {
             Game_Manager.score += 10;
         }
-        else if (collision.gameObject == GameObject.Find("bamsongiPrefab(Clone)"))
-        {
-            Game_Manager.score += 5;
-        }
-        else
+        else if (collision.gameObject == GameObject.Find("Terrain"))
         {
             Game_Manager.score -= 10;
         }
